@@ -109,8 +109,8 @@ export default function App() {
         )}
       </section>
 
-      <section className="mt-6 grid gap-6 lg:grid-cols-5">
-        <div className={`${card} p-5 lg:col-span-2`}>
+      <section className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-5">
+        <div className={`${card} min-w-0 p-5 lg:col-span-2`}>
           <h2 className="text-lg font-semibold">The student</h2>
           {pack.id === RIVERBEND.id && (
             <div className="mt-3 grid gap-2">
@@ -160,7 +160,7 @@ export default function App() {
           </details>
         </div>
 
-        <div className="space-y-6 lg:col-span-3">
+        <div className="min-w-0 space-y-6 lg:col-span-3">
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
             <div className={`${card} p-4`}><div className="text-2xl font-semibold tabular-nums">{transfer.acceptedCredits}<span className="text-base font-normal text-neutral-400"> / {degree.transferCap}</span></div><div className="text-xs text-neutral-500">credits accepted</div><div className="mt-2"><Bar value={transfer.acceptedCredits} max={degree.transferCap} tone="bg-emerald-500" /></div></div>
             <div className={`${card} p-4`}><div className="text-2xl font-semibold tabular-nums">{transfer.rejectedCredits}</div><div className="text-xs text-neutral-500">credits refused</div></div>
