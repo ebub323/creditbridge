@@ -69,18 +69,21 @@ export default function App() {
   };
 
   return (
-    <div className="mx-auto max-w-6xl px-5 py-10">
+    <div>
+      <div className="bg-[#163300] text-white"><div className="mx-auto max-w-6xl px-5 pb-14 pt-8">
       <header>
-        <div className="flex items-center gap-2 text-sm font-semibold tracking-tight"><span className="grid size-7 place-items-center rounded-lg bg-neutral-900 text-white dark:bg-white dark:text-neutral-900">C</span>CreditBridge</div>
-        <h1 className="mt-6 text-4xl font-semibold tracking-tight">What transfers, what is left,<br className="hidden sm:block" /> and the fastest way to graduate.</h1>
-        <p className="mt-4 max-w-2xl text-neutral-600 dark:text-neutral-400">
+        <div className="flex items-center gap-2 text-sm font-semibold tracking-tight"><span className="grid size-7 place-items-center rounded-full bg-[#9fe870] text-[#163300] font-bold">C</span>CreditBridge</div>
+        <h1 className="mt-8 max-w-3xl text-4xl font-extrabold leading-[1.02] tracking-[-0.04em] sm:text-6xl">What transfers, what is left,<br className="hidden sm:block" /> and the fastest way to graduate.</h1>
+        <p className="mt-5 max-w-2xl text-[#cdffad]/80">
           Transfer credit is a rulebook: grade minimums, a cap, residency, courses offered in one season, prerequisite chains. Pick a student, change
           a grade, and watch every course resolve, the degree audit fill in, and the plan to graduation rebuild.
         </p>
-        <p className="mt-3 inline-block rounded-lg bg-amber-500/10 px-3 py-1.5 text-sm text-amber-900 dark:text-amber-200">
+        <p className="mt-3 inline-block rounded-lg bg-white/10 px-3 py-1.5 text-sm text-[#ffd11a]">
           {pack.synthetic ? "All schools and students here are invented. Nothing describes a real institution or person." : "This pack is marked as real rules. Confirm every result with the receiving school's advisor."}
         </p>
       </header>
+      </div></div>
+      <div className="mx-auto max-w-6xl px-5 pb-10 pt-8">
 
       <section className={`${card} mt-8 p-5`}>
         <div className="flex flex-wrap items-center justify-between gap-3">
@@ -170,7 +173,7 @@ export default function App() {
 
           <section className={`${card} p-5`}>
             <div className="flex items-center justify-between"><h2 className="text-lg font-semibold">Every course, resolved</h2>
-              <div className="flex gap-1">{(["all", "accepted", "rejected"] as const).map((f) => <button key={f} onClick={() => setFilter(f)} aria-pressed={filter === f} className={`rounded-full px-3 py-1 text-xs ${filter === f ? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900" : "text-neutral-500 hover:bg-neutral-100 dark:hover:bg-neutral-800"}`}>{f}</button>)}</div></div>
+              <div className="flex gap-1">{(["all", "accepted", "rejected"] as const).map((f) => <button key={f} onClick={() => setFilter(f)} aria-pressed={filter === f} className={`rounded-full px-3 py-1 text-xs ${filter === f ? "bg-[#163300] text-[#9fe870] dark:bg-[#9fe870] dark:text-[#163300]" : "text-neutral-500 hover:bg-[#e2f6d5] dark:hover:bg-[#24351a]"}`}>{f}</button>)}</div></div>
             <ul className="mt-3 divide-y divide-neutral-100 dark:divide-neutral-800">
               {items.map((i, k) => (
                 <li key={`${i.from}-${k}`} className="flex flex-wrap items-start gap-x-3 gap-y-1 py-2.5 text-sm">
@@ -234,6 +237,7 @@ export default function App() {
         A planning aid, not an official evaluation. The receiving school decides what transfers, and a rules pack is only as accurate as its source. The plan is a heuristic that
         also reports the theoretical minimum, so you can see how close it is. Your data stays in this browser.
       </footer>
+    </div>
     </div>
   );
 }

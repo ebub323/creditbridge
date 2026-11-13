@@ -1,7 +1,7 @@
-export const card = "rounded-2xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900";
-export const input = "w-full rounded-lg border border-neutral-300 bg-white px-3 py-1.5 text-sm outline-none focus:border-neutral-900 dark:border-neutral-700 dark:bg-neutral-950 dark:focus:border-neutral-300";
-export const btn = "rounded-lg bg-neutral-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-neutral-700 disabled:cursor-not-allowed disabled:opacity-40 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-300";
-export const btnGhost = "rounded-lg border border-neutral-300 px-3 py-1.5 text-sm hover:bg-neutral-100 disabled:opacity-40 dark:border-neutral-700 dark:hover:bg-neutral-800";
+export const card = "rounded-2xl border border-neutral-200 bg-white dark:border-[#24351a] dark:bg-[#15240d]";
+export const input = "w-full rounded-lg border border-neutral-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#163300] focus:ring-2 focus:ring-[#9fe870]/60 dark:border-neutral-700 dark:bg-neutral-950 dark:focus:border-[#9fe870]";
+export const btn = "rounded-full bg-[#9fe870] px-4 py-1.5 text-sm font-semibold text-[#163300] transition hover:bg-[#cdffad] active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-40";
+export const btnGhost = "rounded-full border border-[#163300]/25 px-4 py-1.5 text-sm font-semibold text-[#163300] transition hover:bg-[#e2f6d5] disabled:opacity-40 dark:border-[#9fe870]/40 dark:text-[#cdffad] dark:hover:bg-[#1d3012]";
 
 export function Chip({ tone, children }: { tone: "green" | "blue" | "violet" | "red" | "amber" | "gray"; children: React.ReactNode }) {
   const t = {
@@ -12,9 +12,9 @@ export function Chip({ tone, children }: { tone: "green" | "blue" | "violet" | "
   return <span className={`inline-block rounded-md px-2 py-0.5 text-xs font-medium ${t}`}>{children}</span>;
 }
 
-export function Bar({ value, max, tone = "bg-neutral-900 dark:bg-white" }: { value: number; max: number; tone?: string }) {
+export function Bar({ value, max, tone = "bg-[#163300] dark:bg-[#9fe870]" }: { value: number; max: number; tone?: string }) {
   return (
-    <div className="h-2 rounded-full bg-neutral-100 dark:bg-neutral-800" role="progressbar" aria-valuenow={value} aria-valuemax={max}>
+    <div className="h-2 rounded-full bg-[#e2f6d5] dark:bg-[#24351a]" role="progressbar" aria-valuenow={value} aria-valuemax={max}>
       <div className={`h-full rounded-full transition-all ${tone}`} style={{ width: `${Math.min(100, (value / Math.max(1, max)) * 100)}%` }} />
     </div>
   );
