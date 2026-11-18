@@ -10,9 +10,25 @@ export const metadata: Metadata = {
   description: "A transfer-credit planner built around the problem, not anyone's transcript. Grade minimums, transfer caps, residency and prerequisite chains, explained course by course.",
 };
 
+// GitHub Pages can't send HTTP headers, so the policy ships as meta tags.
+// Next.js inlines its bootstrap scripts, so script-src needs 'unsafe-inline'.
+const csp = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "object-src 'none'",
+  "img-src 'self' data:",
+  "style-src 'self' 'unsafe-inline'",
+  "script-src 'self' 'unsafe-inline'",
+].join("; ");
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${geistMono.variable} antialiased`}>
+      <head>
+        <meta httpEquiv="Content-Security-Policy" content={csp} />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+      </head>
       <body className="min-h-screen">{children}</body>
     </html>
   );
